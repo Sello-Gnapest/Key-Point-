@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-app: #f3f6f9;
+  --bg-card: #ffffff;
+  --bg-card-subtle: #f8fafc;
+  --bg-sidebar: #ffffff;
+  --bg-header: rgba(243, 246, 249, 0.9);
+  --border-color: #e5e9f0;
+  --border-subtle: #edf2f7;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --text-faint: #94a3b8;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e1;
+  --hover-subtle: #f1f5f9;
+  --scrollbar-track: #f3f6f9;
+  --scrollbar-thumb: #cbd5e1;
+}
+
+.dark {
+  --bg-app: #0b0f17;
+  --bg-card: #111622;
+  --bg-card-subtle: #0f1523;
+  --bg-sidebar: #090d14;
+  --bg-header: rgba(11, 15, 23, 0.92);
+  --border-color: rgba(30, 41, 59, 0.8);
+  --border-subtle: rgba(30, 41, 59, 0.5);
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --text-faint: #64748b;
+  --input-bg: #090d14;
+  --input-border: rgba(30, 41, 59, 0.8);
+  --hover-subtle: rgba(15, 23, 42, 0.6);
+  --scrollbar-track: #090d14;
+  --scrollbar-thumb: #1e293b;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Light Theme Precise Styling Overrides */
+html:not(.dark) {
+  --bg-app: #f3f6f9;
+}
+
+/* Card surfaces */
+html:not(.dark) .bg-\[\#111622\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e5e9f0 !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.03);
+}
+
+/* Secondary surfaces (excluding hero panel) */
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-900,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-900\/30,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-900\/40,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-900\/50,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-900\/60,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-900\/70,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-900\/80,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-900\/90 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #e5e9f0 !important;
+}
+
+/* Sub-panels and rows (excluding hero panel) */
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-950,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-950\/40,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-950\/50,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-950\/60,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .bg-slate-950\/70 {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #e5e9f0 !important;
+}
+
+/* Border lines */
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .border-slate-800,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .border-slate-800\/40,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .border-slate-800\/50,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .border-slate-800\/60,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .border-slate-800\/70,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .border-slate-800\/80 {
+  border-color: #e5e9f0 !important;
+}
+
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .divide-slate-800\/60 > :not([hidden]) ~ :not([hidden]) {
+  border-color: #edf2f7 !important;
+}
+
+/* Text hierarchy (excluding hero panel and buttons) */
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *):not(button):not(button *) .text-white {
+  color: #0f172a !important;
+}
+
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .text-slate-300 {
+  color: #334155 !important;
+}
+
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .text-slate-200 {
+  color: #1e293b !important;
+}
+
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .text-slate-400 {
+  color: #64748b !important;
+}
+
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Brand and semantic highlights */
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .text-cyan-300,
+html:not(.dark) :not(.hero-visual-panel):not(.hero-visual-panel *) .text-cyan-400 {
+  color: #0284c7 !important;
+}
+
+/* Hero Showcase High Contrast Protection */
+.hero-visual-panel {
+  background-color: #020617 !important;
+}
+
+.hero-visual-panel,
+.hero-visual-panel * {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+html:not(.dark) .hero-visual-panel .text-white,
+.hero-visual-panel .text-white,
+.force-white,
+button.bg-\[\#00a2ea\] *,
+button.bg-\[\#00a2ea\] {
+  color: #ffffff !important;
+}
+
+html:not(.dark) .hero-visual-panel .text-slate-100,
+.hero-visual-panel .text-slate-100 {
+  color: #f8fafc !important;
+}
+
+html:not(.dark) .hero-visual-panel .text-slate-200,
+.hero-visual-panel .text-slate-200 {
+  color: #f1f5f9 !important;
+}
+
+html:not(.dark) .hero-visual-panel .text-slate-300,
+.hero-visual-panel .text-slate-300 {
+  color: #cbd5e1 !important;
+}
+
+html:not(.dark) .hero-visual-panel .text-cyan-300,
+.hero-visual-panel .text-cyan-300 {
+  color: #67e8f9 !important;
+}
+
+html:not(.dark) .text-emerald-400 {
+  color: #16a34a !important;
+}
+
+html:not(.dark) .text-amber-400,
+html:not(.dark) .text-amber-300,
+html:not(.dark) .text-amber-200 {
+  color: #b45309 !important;
+}
+
+html:not(.dark) .text-red-400 {
+  color: #dc2626 !important;
+}
+
+/* Hover effects */
+html:not(.dark) .hover\:bg-slate-900\/40:hover,
+html:not(.dark) .hover\:bg-slate-900\/80:hover,
+html:not(.dark) .hover\:bg-slate-800:hover,
+html:not(.dark) .hover\:bg-slate-850:hover,
+html:not(.dark) .hover\:bg-slate-700:hover {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Input elements */
+html:not(.dark) input,
+html:not(.dark) select,
+html:not(.dark) textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}

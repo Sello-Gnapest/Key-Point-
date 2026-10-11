@@ -1,0 +1,8 @@
+{
+  "name": "Key Point - Property Key Management",
+  "description": "Professional property key management system. Track, manage, and audit your property keys with precision.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
